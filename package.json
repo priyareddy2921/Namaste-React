@@ -11,5 +11,8 @@
     "url": "https://github.com/priyareddy2921/Namaste-React/tree/react"
   },
   "author": "priya",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
