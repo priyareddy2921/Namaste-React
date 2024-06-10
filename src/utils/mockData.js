@@ -1,16 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-// --------whole app-------------
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-// _______api--------
 const resList= [
     {
       "info": {
@@ -1845,59 +1832,5 @@ const resList= [
       }
     }
   ]
-    
-// ---------body----------
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant)=>(
-            <RestaurantCard  key={restaurant.info.id} resData={restaurant}/>
-        ))}
-        
-      </div>
-    </div>
-  );
-};
-// ---------------restcard--------
-const RestaurantCard = (props) => {
-   const {resData}=props;
-   const {name,cuisines,avgRating}=resData.info;
-   const {deliveryTime}=resData.info.sla;
-//    console.log(resData.info.name);
-  return (
-    <div className="res-card">
-        
-      <img className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ resData.info.cloudinaryImageId}></img>
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{deliveryTime}</h4>
-      
-    </div>
-  );
-};
-// --------header-----------
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://marketplace.canva.com/EAFaFUz4aKo/2/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-JmYWTjUsE-Q.jpg"
-        ></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Cart</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+
+  export default resList;
